@@ -20,3 +20,33 @@
 .App-link {
   color: #09d3ac;
 }
+
+.home {
+	background-color: rgb(235, 222, 207);
+	text-align: center;
+	padding: 156px 20px 56px;
+	min-height: 100%;
+	width: 100%;
+}
+
+.buttonWrapper {
+	width: 800px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	justify-items: center;
+	align-items: center;
+}
+
+section {
+	padding-top: 50px;
+	padding-bottom: 100px;
+}
+
+/* Responsive images */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+
