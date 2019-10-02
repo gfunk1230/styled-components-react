@@ -1,5 +1,4 @@
-import styled, { css } from 'styled-components';
-
+import styled, { css, FlattenSimpleInterpolation, SimpleInterpolation, ThemedCssFunction, DefaultTheme } from 'styled-components';
 
 interface gridChildProps {
   desktop?: number,
@@ -17,13 +16,13 @@ const sizes = {
 
 // Iterate through the sizes and create a media template
 const media = Object.keys(sizes).reduce((obj, platform) => {
-  obj[platform] = (...args:Array<String>) => css`
-    @media (min-width: ${sizes[platform] / 16}rem) {
-      ${css(...args)}
+  obj[platform] = ((first: TemplateStringsArray, ...args:any[]) => css`
+    @media (min-width: ${sizes[platform as keyof typeof sizes] / 16}rem) {
+      ${css(first, ...args)}
     }
-  `
+  `) as unknown as ThemedCssFunction<DefaultTheme>;
   return obj;
-}, {});
+}, {} as Record<string, ThemedCssFunction<DefaultTheme>>);
 
 /* 
 if no css grid col span is set for 
