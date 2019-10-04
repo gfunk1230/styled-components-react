@@ -9,16 +9,19 @@ import Typography from "./components/type";
 import { media } from "./components/utils/mediaQueries";
 import './App.css';
 
-interface headerProps {
-  phone: string,
-  tablet: string,
-  desktop: string,
-}
-
 const HeaderResponsive = styled.h3`
-  ${media.phone`color: green;`}
-  ${media.tablet`color: red;`}
-  ${media.desktop`color: purple;`}
+  ${media.phone`
+  color: green; 
+  font-size: 12px;
+  `}
+  ${media.tablet`
+  color: red; 
+  font-size: 24px;
+  `}
+  ${media.desktop`
+  color: purple; 
+  font-size: 64px;
+  `}
 `;
 
 const App: React.FC = () => {
@@ -53,29 +56,29 @@ const App: React.FC = () => {
           <strong>Props :</strong> bgColor, phone , tablet, desktop
         </p>
         <GridParent gridTemplateColumns={12} bgColor="blueviolet">
-          <GridChild as="span" desktop={2} bgColor="aqua">
+          <GridChild as="span" tablet={2} desktop={6} bgColor="aqua">
             <img src="https://placeimg.com/550/550/any"/>
-            <p>2 column div on desktop</p>
+            <p>Hi I am a column</p>
           </GridChild>
-          <GridChild desktop={2} bgColor="aqua">
+          <GridChild tablet={2} desktop={6} bgColor="aqua">
             <img src="https://placeimg.com/550/550/any"/>
-            <p>2 column div on desktop</p>
+            <p>Hi I am a column</p>
           </GridChild>
-          <GridChild desktop={2} bgColor="aqua">
+          <GridChild tablet={2} desktop={6} bgColor="aqua">
             <img src="https://placeimg.com/550/550/any"/>
-            <p>2 column div on desktop</p>
+            <p>Hi I am a column</p>
           </GridChild>
-          <GridChild desktop={2} bgColor="aqua">
+          <GridChild tablet={2} desktop={6} bgColor="aqua">
             <img src="https://placeimg.com/550/550/any"/>
-            <p>2 column div on desktop</p>
+            <p>Hi I am a column</p>
           </GridChild>
-          <GridChild desktop={2} bgColor="aqua">
+          <GridChild tablet={2} desktop={6} bgColor="aqua">
             <img src="https://placeimg.com/550/550/any"/>
-            <p>2 column div on desktop</p>
+            <p>Hi I am a column</p>
           </GridChild>
-          <GridChild desktop={2} bgColor="aqua">
+          <GridChild tablet={2} desktop={6} bgColor="aqua">
             <img src="https://placeimg.com/550/550/any"/>
-            <p>2 column div on desktop</p>
+            <p>Hi I am a column</p>
           </GridChild>
         </GridParent>
       </section>

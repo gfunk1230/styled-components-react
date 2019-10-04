@@ -1,4 +1,4 @@
-import styled, { css, FlattenSimpleInterpolation, SimpleInterpolation, ThemedCssFunction, DefaultTheme } from 'styled-components';
+import styled, { css, ThemedCssFunction, DefaultTheme } from 'styled-components';
 
 interface gridChildProps {
   desktop?: number,
@@ -30,12 +30,11 @@ desktop, tablet, phone it fallsback to 12 columns
 */
 
 export default styled.div<gridChildProps>`
-  background-color: ${(props) => props.bgColor ? props.bgColor : 'transparent'};
+  background-color: ${props => props.bgColor ? props.bgColor : 'transparent'};
   grid-column: span 12;
-  ${media.phone`grid-column: span ${(props: gridChildProps) => props.phone ? props.phone : 12}`}
-  ${media.tablet`grid-column: span ${(props: gridChildProps) => props.tablet ?  props.tablet : 12}`}
-  ${media.desktop`grid-column: span ${(props: gridChildProps) => props.desktop ?  props.desktop : 12}`}
-  
+  ${props => props.phone && media.phone`grid-column: span ${props.phone}`}
+  ${props => media.tablet && media.tablet`grid-column: span ${props.tablet}`}
+  ${props => media.desktop && media.desktop`grid-column: span ${props.desktop}`}
 `;
 
 
